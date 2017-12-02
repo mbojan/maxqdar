@@ -12,10 +12,12 @@
 #' - `ID` - ID of the fragment
 #' - `TextID` - ID of the source document
 #'
+#' @import dplyr
 #' @export
 extract_codings <- function(fname) {
   # connect to file
-  db <- src_sqlite("../../inst/exdata/test.mex")
+  stopifnot(file.exists(fname))
+  db <- src_sqlite(fname)
 
   # Tables
   codings <-

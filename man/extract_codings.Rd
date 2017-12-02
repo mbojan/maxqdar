@@ -14,6 +14,12 @@ Data frame with columns
 \itemize{
 \item \code{ID} - ID of the fragment
 \item \code{TextID} - ID of the source document
+\item \code{WordID} - ID of the codeword
+\item \code{Preview} - First 63 characters of the coded text fragment
+\item \code{start} - Position of the initial character of the coded text fragment
+\item \code{end} - Position of the final character of the coded text fragment
+\item \code{file_name} - Name of the file with the source text
+\item \code{tag} - Name of the codeword
 }
 }
 \description{

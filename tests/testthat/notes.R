@@ -7,7 +7,7 @@ test_that("It works", {
 
   library(dplyr)
 
-  db <- src_sqlite("../../inst/exdata/test.mex")
+  db <- DBI::dbConnect(RSQLite::SQLite(), "inst/exdata/test.mex")
 
   codings <-
   db %>%

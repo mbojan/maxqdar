@@ -17,16 +17,15 @@
 #' - `end` - Position of the final character of the coded text fragment
 #' - `file_name` - Name of the file with the source text
 #' - `tag` - Name of the codeword
+#' - `preview_length` - Number of characters in the Preview string
 #'
 #' @import dplyr
 #' @export
 extract_codings <- function(fname) {
   # connect to file
   stopifnot(file.exists(fname))
-  # db <- DBI::dbConnect(RSQLite::SQLite(), fname)
-  # on.exit(DBI::dbDisconnect(db))
-  db <- src_sqlite(fname)
-  on.exit(DBI::dbDisconnect(db$con))
+  db <- DBI::dbConnect(RSQLite::SQLite(), fname)
+  on.exit(DBI::dbDisconnect(db))
 
   # Tables
   codings <-
@@ -42,7 +41,7 @@ extract_codings <- function(fname) {
     tbl("Codewords")
 
   ID <- TextID <- WordID <- Preview <- SegPos1X <- SegPos2X <- Name <- NULL
-  codings %>%
+  rval <- codings %>%
     select(ID, TextID, WordID, Preview, start=SegPos1X, end=SegPos2X) %>%
     left_join(
       select(texts, ID, file_name=Name),
@@ -52,5 +51,15 @@ extract_codings <- function(fname) {
       select(codewords, ID, tag=Name),
       by = c("WordID"= "ID")
     ) %>%
+    mutate(
+      preview_length = nchar(Preview)
+    ) %>%
     collect()
+
+  # Check if Preview is 63 chars long
+  w <- which(rval$preview_length == 63)
+  if(length(w) > 0)
+    warning("number of preview strings 63 chars long = ", length(w))
+
+  rval
 }

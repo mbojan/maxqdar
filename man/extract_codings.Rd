@@ -20,6 +20,7 @@ Data frame with columns
 \item \code{end} - Position of the final character of the coded text fragment
 \item \code{file_name} - Name of the file with the source text
 \item \code{tag} - Name of the codeword
+\item \code{preview_length} - Number of characters in the Preview string
 }
 }
 \description{

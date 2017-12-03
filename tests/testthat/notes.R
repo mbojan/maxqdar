@@ -37,12 +37,7 @@ d <-
 
 
 
-extract_codings('inst/exdata/test.mex') %>%
-  mutate(
-    len = nchar(Preview)
-  ) %>%
-  filter(len==63) %>%
-  select(-ID, -TextID, -WordID)
+extract_codings('inst/exdata/test.mex')
 
 })
 

@@ -1,0 +1,26 @@
+---
+title: "`maxqdar` -- Interfacing MAXQDA's exchange files with R"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# Installation
+
+```{r installation, eval=FALSE}
+devtools::install_github("mbojan/maxqdar")
+```
+
+
+# Usage
+
+```{r}
+library(maxqdar)
+f <- system.file("exdata/test.mex", package="maxqdar")
+extract_mex_codings(f)
+```
+

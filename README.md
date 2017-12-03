@@ -40,3 +40,8 @@ extract_mex_codings(f)
     ## # ... with 392 more rows
 
 -   **CAUTION**: The `Preview` column provides at most 63-character long part of the coded string. If the limit is reached the function gives a warning.
+
+License
+=======
+
+MIT @ Michal Bojanowski

@@ -23,8 +23,10 @@
 extract_codings <- function(fname) {
   # connect to file
   stopifnot(file.exists(fname))
-  db <- DBI::dbConnect(RSQLite::SQLite(), fname)
-  on.exit(DBI::dbDisconnect(db))
+  # db <- DBI::dbConnect(RSQLite::SQLite(), fname)
+  # on.exit(DBI::dbDisconnect(db))
+  db <- src_sqlite(fname)
+  on.exit(DBI::dbDisconnect(db$con))
 
   # Tables
   codings <-
@@ -39,6 +41,7 @@ extract_codings <- function(fname) {
     db %>%
     tbl("Codewords")
 
+  ID <- TextID <- WordID <- Preview <- SegPos1X <- SegPos2X <- Name <- NULL
   codings %>%
     select(ID, TextID, WordID, Preview, start=SegPos1X, end=SegPos2X) %>%
     left_join(

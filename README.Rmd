@@ -3,11 +3,19 @@ title: "`maxqdar` -- Interfacing MAXQDA's exchange files with R"
 output: github_document
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+
 [![Travis-CI Build Status](https://travis-ci.org/mbojan/maxqdar.svg?branch=master)](https://travis-ci.org/mbojan/maxqdar)
+
+
+
+
+
 
 # Installation
 
@@ -16,11 +24,19 @@ devtools::install_github("mbojan/maxqdar")
 ```
 
 
+
+
+
+
+
 # Usage
 
-```{r}
+Extracting coded fragments as a data frame with start and end character positions:
+
+```{r extract_mex_codings}
 library(maxqdar)
 f <- system.file("exdata/test.mex", package="maxqdar")
 extract_mex_codings(f)
 ```
 
+- **CAUTION**: The `Preview` column provides at most 63-character long part of the coded string. If the limit is reached the function gives a warning.

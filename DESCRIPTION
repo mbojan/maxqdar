@@ -8,6 +8,6 @@ Encoding: UTF-8
 LazyData: true
 Authors@R: c(person("Michal", "Bojanowski", role=c("aut", "cre"), email="michal2992@gmail.com"))
 Suggests: testthat
-Imports: dplyr, DBI, RSQLite
+Imports: dplyr, DBI, RSQLite, dbplyr
 Roxygen: list(markdown=TRUE)
 RoxygenNote: 6.0.1

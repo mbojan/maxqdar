@@ -10,4 +10,4 @@ Authors@R: c(person("Michal", "Bojanowski", role=c("aut", "cre"), email="michal2
 Suggests: testthat
 Imports: dplyr, DBI, RSQLite, dbplyr
 Roxygen: list(markdown=TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 7.2.1

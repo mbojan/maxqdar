@@ -47,4 +47,4 @@ extract_mex_codings(f)
 
 # License
 
-MIT @ Michal Bojanowski
+GPL-3

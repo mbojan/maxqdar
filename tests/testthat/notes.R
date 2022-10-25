@@ -49,7 +49,7 @@ extract_codings('inst/exdata/test.mex')
 test_that("Reading XLS works", {
   skip("Just notes")
 
-  d <- readxl::read_xls("inst/exdata/test.xls")
+  # d <- readxl::read_xls("inst/exdata/test.xls")
 })
 
 

@@ -3,7 +3,7 @@ Type: Package
 Title: Interface to MAXQDA Files
 Version: 0.0.1
 Description: Reading MAXQDA files, including MER exchange files.
-License: GPL-2
+License: GPL (>= 3)
 Encoding: UTF-8
 Authors@R: c(
     person("Michal", "Bojanowski", role=c("aut", "cre"), email="michal2992@gmail.com", comment = c(ORCID="0000-0001-7503-852X"))
